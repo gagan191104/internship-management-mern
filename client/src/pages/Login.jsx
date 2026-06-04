@@ -18,7 +18,7 @@ export default function Login() {
     setError("");
     setBusy(true);
     try {
-      const u = await login(email.trim(), password);
+      const u = await login(email.trim(), password.trim());
       const dest = from || getRoleHomePath(u.role);
       if (!u.isVerified && u.role !== "admin") {
         navigate("/pending-approval", { replace: true });
@@ -44,7 +44,15 @@ export default function Login() {
             <label className="label" htmlFor="email">
               Email
             </label>
-            <input id="email" className="input" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input
+              id="email"
+              className="input"
+              type="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div style={{ marginBottom: "1.25rem" }}>
             <label className="label" htmlFor="password">
@@ -60,13 +68,24 @@ export default function Login() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary" style={{ width: "100%" }} disabled={busy}>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            style={{ width: "100%" }}
+            disabled={busy}
+          >
             {busy ? "Signing in…" : "Sign in"}
           </button>
         </form>
-        <p style={{ marginTop: "1.25rem", fontSize: "0.9rem", color: "var(--text-muted)", textAlign: "center" }}>
-          No account?{" "}
-          <Link to="/register">Register</Link>
+        <p
+          style={{
+            marginTop: "1.25rem",
+            fontSize: "0.9rem",
+            color: "var(--text-muted)",
+            textAlign: "center",
+          }}
+        >
+          No account? <Link to="/register">Register</Link>
         </p>
       </div>
     </div>
