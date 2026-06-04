@@ -2,7 +2,7 @@
 
 A full-stack MERN application for managing internships, connecting students with employers, and allowing admins to oversee the entire process.
 
-🌐 **Live Demo:** [https://internship-management-58nh.onrender.com](https://internship-management-58nh.onrender.com)
+🌐 **Live Demo:** https://internship-management-58nh.onrender.com/
 
 ---
 
