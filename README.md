@@ -317,6 +317,4 @@ Every `git push` to the `main` branch automatically triggers a new deployment on
 
 ---
 
-## 📄 License
 
-This project is licensed under the MIT License.
